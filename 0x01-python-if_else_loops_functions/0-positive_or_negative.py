@@ -1,4 +1,4 @@
-#python3
+#!/usr/bin/python3
 import random
 n = random.randint(-10, 10)
 if n > 0:
