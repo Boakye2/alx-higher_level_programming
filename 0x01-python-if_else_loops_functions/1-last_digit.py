@@ -11,4 +11,7 @@ elif digit == 0:
     print("0")
 else:
     print("less than 6 and not 0")
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5bc5392987b0e2f16cba4fd80c67896d8fd0621a
