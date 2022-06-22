@@ -3,4 +3,4 @@
 
 class Square(object):
 
-    pass
+    
