@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # 3-square.py
+# bOAKYE
 """Area square: """
 
 
@@ -15,4 +16,4 @@ class Square(object):
 
     def area(self):
         """Define area"""
-        return self.__size * self.
+        return self.__size * self.__size
