@@ -4,6 +4,7 @@
     It is not allowed to import any module
 """
 
+
 def lookup(obj):
     """ A list object"""
     return dir(obj)
