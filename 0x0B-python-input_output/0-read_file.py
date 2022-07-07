@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-# B
-""" File name : 1-number_of_lines.py
+# Boakye
+""" File name : 0-read_file.py
     Use the with statement
     It is not allowed to import any module
 """
 
 
-def number_of_lines(filename=""):
-    """number_of_lines: returns the number of lines of a text file:
+def read_file(filename=""):
+    """read_file reads a text file (UTF8) and prints it to stdout
 
     Args:
         filename (str): content of the file. Defaults to "".
     """
     with open(filename, 'r', encoding='utf-8') as f:
-        return len(f.readlines())
+        print(f.read(), end="")
