@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 # Boakye
-""" File name : 4-append_write.py
+""" File name : 6-from_json_string.py
 """
+import json
 
 
-def append_write(filename="", text=""):
-    """append_write appends a string at the end of a text file (UTF8)
+def from_json_string(my_str):
+    """from_json_string  returns an object
+    (Python data structure) represented by a JSON string
 
     Args:
-        filename (str): Defaults to "".
-        text (str): text to add. Defaults to "".
+        my_str (obj): any object for example list, dict
     """
-    with open(filename, 'a', encoding='utf-8') as f:
-        return f.write(text)
+    return(json.loads(my_str))

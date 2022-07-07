@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 # Boakye
-""" File name : 3-write_file.py
+""" File name : 5-to_json_string.py
 """
+import json
 
 
-def write_file(filename="", text=""):
-    """write_file writes a string to a text file  (UTF8)
+def to_json_string(my_obj):
+    """to_json_string  returns the JSON representation of an object (string)
 
     Args:
-        filename (str): Defaults to "".
-        text (str): text to add. Defaults to "".
+        my_obj (obj): any object for example list, dict
     """
-    with open(filename, 'w', encoding='utf-8') as f:
-        return f.write(text)
+    return(json.dumps(my_obj))

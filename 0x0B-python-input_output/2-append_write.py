@@ -1,26 +1,15 @@
 #!/usr/bin/python3
 # Boakye
-""" File name : 2-read_lines.py
-    Use the with statement
-    It is not allowed to import any module
+""" File name : 4-append_write.py
 """
 
 
-def read_lines(filename="", nb_lines=0):
-    """read_lines reads n lines of a text file (UTF8) and prints it to stdout
+def append_write(filename="", text=""):
+    """append_write appends a string at the end of a text file (UTF8)
 
     Args:
-        filename (str): content of the file. Defaults to "".
-        nb_lines (int): number lines. Defaults to 0.
-
-    Returns:
-        str: returns the number of lines of a text file
+        filename (str): Defaults to "".
+        text (str): text to add. Defaults to "".
     """
-    line_count = 0
-    with open(filename, 'r', encoding='utf-8') as f:
-        if nb_lines <= 0:
-            print(f.read(), end="")
-        for line in f:
-            if line_count < nb_lines:
-                print(line, end="")
-                line_count += 1
+    with open(filename, 'a', encoding='utf-8') as f:
+        return f.write(text)
