@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import sys
-
+# Boakye
+""" File name : 101-stats.py
+"""
 
 def print_info():
     print('File size: {:d}'.format(file_size))
