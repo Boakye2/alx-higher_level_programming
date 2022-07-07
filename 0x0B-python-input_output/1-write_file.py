@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# B
+# Boakye
 """ File name : 1-number_of_lines.py
     Use the with statement
     It is not allowed to import any module
