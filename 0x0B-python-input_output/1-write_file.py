@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 # Boakye
-""" File name : 1-number_of_lines.py
-    Use the with statement
-    It is not allowed to import any module
+""" File name : 3-write_file.py
 """
 
 
-def number_of_lines(filename=""):
-    """number_of_lines: returns the number of lines of a text file:
+def write_file(filename="", text=""):
+    """write_file writes a string to a text file  (UTF8)
 
     Args:
-        filename (str): content of the file. Defaults to "".
+        filename (str): Defaults to "".
+        text (str): text to add. Defaults to "".
     """
-    with open(filename, 'r', encoding='utf-8') as f:
-        return len(f.readlines())
+    with open(filename, 'w', encoding='utf-8') as f:
+        return f.write(text)
