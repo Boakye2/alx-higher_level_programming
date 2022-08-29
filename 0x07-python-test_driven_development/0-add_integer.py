@@ -7,6 +7,7 @@
 
 def add_integer(a, b=98):
     """Return the integer addition of a and b.
+        and print some Error
     """
     if (a is None or not isinstance(a, int) and (not isinstance(a, float))):
         raise TypeError("a must be an integer")
