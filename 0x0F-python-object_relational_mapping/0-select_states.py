@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#Boakye
 """  Script that gets all data from a database."""
 import MySQLdb
 from sys import argv
