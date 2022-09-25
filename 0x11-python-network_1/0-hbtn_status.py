@@ -2,7 +2,7 @@
 """What's my status?"""
 import urllib.request
 
-with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as url:
+with urllib.request.urlopen('https://intranet.hbtn.io/status') as url:
     s = url.read()
-    req = "Body response:\n\t- type: {}\n\t- content: {}\n\t- utf8 content: {}"
+    req = "Body response:$\n\t- type: {}$\n\t- content: {}$\n\t- utf8 content: {}$"
     print(req.format(type(s), s, s.decode('utf-8')))
