@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """What's my status?"""
-# Boakye2
 import urllib.request
 
 with urllib.request.urlopen('https://intranet.hbtn.io/status') as url:
