@@ -1,0 +1,251 @@
+``100-matrix_mul`` module test
+==================================
+
+Using ``matrix_mul`` function
+-----------------------------------
+
+This text file contains test cases for the function ``matrix_mul``.
+The function is supposed to multiply two matrix.
+First import function to the varaible matrix_mul:
+    
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Now use it:
+
+Test_0 Normal cases
+-------------------
+    >>> matrix_mul([[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]], [[1, 1, 1, 1], [1, 1, 1, 1], [1, 1, 1, 1]])
+    [[3, 3, 3, 3], [3, 3, 3, 3], [3, 3, 3, 3], [3, 3, 3, 3]]
+    >>> matrix_mul([[1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0]], [[1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0], [1.0, 1.0, 1.0, 1.0]])
+    [[3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0]]
+    >>> matrix_mul([[-1.0, -1.0, -1.0], [-1.0, -1.0, -1.0], [-1.0, -1.0, -1.0], [-1.0, -1.0, -1.0]], [[-1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0], [-1.0, -1.0, -1.0, -1.0]])
+    [[3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0], [3.0, 3.0, 3.0, 3.0]]
+    >>> matrix_mul([[2, 3], [3, 4], [1, 2]], [[1, 1, 1, 1], [1, 1, 1, 0]])
+    [[5, 5, 5, 2], [7, 7, 7, 3], [3, 3, 3, 1]]
+
+=================
+REQUIREMENT CASES
+=================
+
+Test_1 first matrix is not a list
+---------------------------------
+    >>> first_matrix = "string"
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+Test_2 second matrix is not a list
+----------------------------------
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = "string"
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list
+
+Test_3 both first and second matrix aren't list
+-----------------------------------------------
+    >>> first_matrix = "string"
+    >>> second_matrix = "string"
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+Test_4 first matrix is not a list of lists
+------------------------------------------
+    >>> first_matrix = [3, 2, 4, 4]
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list of lists
+
+Test_5 second matrix is not a list of lists
+-------------------------------------------
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = [2, 3, 4, 5]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list of lists
+
+Test_6 both first and second matrix aren't list of lists
+--------------------------------------------------------
+    >>> first_matrix = [2, 3, 3, 4]
+    >>> second_matrix = [2, 3, 3, 4]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list of lists
+
+Test_7 first matrix is a empty list: []
+---------------------------------------
+    >>> first_matrix = []
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+Test_8 first matrix is an empty list of lists: [[]]
+----------------------------------------------------
+    >>> first_matrix = [[]]
+    >>> second_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+Test_9 second matrix is an empty list: []
+-----------------------------------------
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = []
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+Test_10 second matrix is an empty list of lists: [[]]
+-----------------------------------------------------
+    >>> first_matrix = [[1, 2, 3], [1, 2, 3]]
+    >>> second_matrix = [[]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+Test_11 both first and second matrix are empty list: []
+-------------------------------------------------------
+    >>> first_matrix = []
+    >>> second_matrix = []
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+Test_12 first matrix is empty list and second matrix is empty list of lists
+---------------------------------------------------------------------------
+    >>> first_matrix = []
+    >>> second_matrix = [[]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+Test_13 second matrix is empty list and first matrix is empty list of lists
+----------------------------------------------------------------------------
+    >>> first_matrix = [[]]
+    >>> second_matrix = []
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+Test_14 both first and second matrix are empty list of lists
+------------------------------------------------------------
+    >>> first_matrix = [[]]
+    >>> second_matrix = [[]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+Test_15 element of first list of lists is not an integer or a float
+-------------------------------------------------------------------
+    >>> first_matrix = [[1, 2, "h"], [2, 3, 4]]
+    >>> second_matrix = [[2, 2], [3, 1], [4, 2]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
+
+Test_16 element of second lists of lists is not an integer or a float
+---------------------------------------------------------------------
+    >>> first_matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> second_matrix = [[2, "2"], [3, 1], [4, 2]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_b should contain only integers or floats
+
+Test_17 both first and second list of lists have a non integer or float value
+-----------------------------------------------------------------------------
+    >>> first_matrix = [[1, 2, "3"], [2, 3, 4]]
+    >>> second_matrix = [[2, "2"], [3, 1], [4, 2]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
+
+Test_18 first matrix rows are not the same length
+------------------------------------------------
+    >>> first_matrix = [[1, 2, 3], [2, 3]]
+    >>> second_matrix = [[1, 2], [2, 3], [2, 2]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: each row of m_a must be of the same size
+
+Test_19 second matrix rows are not the same length
+--------------------------------------------------
+    >>> first_matrix = [[1, 2], [2, 3], [2, 2]]
+    >>> second_matrix = [[2, 3, 4, 5], [2, 3]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: each row of m_b must be of the same size
+
+Test_20 both first and second matrix rows are not the same length
+-----------------------------------------------------------------
+    >>> first_matrix = [[1, 2], [2, 3, 3], [2, 2]]
+    >>> second_matrix = [[2, 3, 4, 5], [2, 3]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: each row of m_a must be of the same size
+
+Test_21 column number of first matrix is different to the row number of second matrix
+-------------------------------------------------------------------------------------
+    >>> first_matrix = [[1, 2], [2, 3], [3, 2]]
+    >>> second_matrix = [[2, 3], [3,2], [2, 2]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied
+
+=================
+EDGE CASES
+=================
+
+Test_0 None as first argument
+-----------------------------
+    >>> first_matrix = None
+    >>> second_matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a must be a list
+
+Test_1 None as second argument
+------------------------------
+    >>> first_matrix = [[1, 2, 3], [2, 3, 4]]
+    >>> second_matrix = None
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_b must be a list
+
+Test_2 both first and second arguments as None
+----------------------------------------------
+    >>> first_matrix = None
+    >>> second_matrix = None
+    >>> matrix_mul(first_matrix, second_matrix)
+    Traceback (most recent call last):
+    TypeError: m_a must be a list
+
+Test_3 missing 1 argument
+-------------------------
+    >>> print(matrix_mul([[1, 2, 3], [1, 2, 3]]))
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+Test_4 missing 2 arguments
+--------------------------
+    >>> print(matrix_mul())
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+    
