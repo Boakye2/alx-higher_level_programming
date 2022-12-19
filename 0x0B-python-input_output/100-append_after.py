@@ -1,15 +1,21 @@
 #!/usr/bin/python3
+"""write_file module.
+Contains a function that inserts a line of text to a file.
+"""
+
+
 def append_after(filename="", search_string="", new_string=""):
-    with open(filename, mode='r', encoding='utf-8') as f:
-        text = f.readlines()
-        new_text = []
-
-        for line in text:
-            new_text.append(line)
-
+    """
+    Inserts a line of text to a file, after
+    each line containing a specific string.
+    """
+    out = ""
+    with open(filename, 'r') as f:
+        for line in f:
+            out += line
             if search_string in line:
-                new_text.append(new_string)
+                out += new_string
 
-    with open(filename, mode='w', encoding='utf-8') as nf:
-        for line in new_text:
-            nf.write(line)
+    with open(filename, 'w') as f:
+        f.write(out)
+        
